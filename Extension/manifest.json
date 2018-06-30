@@ -1,0 +1,39 @@
+{
+    "name": "Cookie API Test Extension",
+    "version" : "0.8",
+    "author": "Microsoft Edge Extension Developer",
+    "description": "Testing Cookie API",
+    "icons": {
+        "25": "images/color-changer25.png",
+        "48": "images/color-changer48.png"
+      },
+    "permissions": [
+      "http://*/*", 
+      "https://*/*",
+      "cookies",
+      "storage",
+      "tabs",
+      "notifications"
+    ], 
+    "browser_action": {
+        "default_icon": {
+            "20": "images/color-changer20.png",
+            "40": "images/color-changer40.png"
+          },
+      "default_title": "Cookie Api",
+      "default_popup": "manager.html"
+    },
+    "content_scripts": [{
+        "matches": [
+          "http://*/*",
+          "https://*/*"
+        ],
+        "js": ["js/content.js"]
+    }],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": true
+    },
+    "manifest_version": 2
+  }
+  
